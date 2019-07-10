@@ -8,8 +8,11 @@
 ## Screenshot
 
 ![Board](preview/screenshot-1.png)
+
 ![Kanboard](preview/screenshot-2.png)
+
 ![New](preview/screenshot-3.png)
+
 ![Detail](preview/screenshot-4.png)
 
 ## Requirements
