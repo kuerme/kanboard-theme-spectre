@@ -1,37 +1,55 @@
-# kanboard-theme-spectre
+<h1 align="center">Welcome to Kanboard Theme Spectre 👋</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-#### 介绍
-kanboard 系统的主题
+> This is a modern CSS theme for Kanboard and it's created based on [SPECTRE.CSS](https://picturepan2.github.io/spectre/)
 
-#### 软件架构
-软件架构说明
+## Screenshot
 
+![Board](preview/screenshot-1.png)
+![Kanboard](preview/screenshot-2.png)
+![New](preview/screenshot-3.png)
+![Detail](preview/screenshot-4.png)
 
-#### 安装教程
+## Requirements
 
-1. xxxx
-2. xxxx
-3. xxxx
+Kanboard >= v1.2.10  
+Kanboard installed at a web server.
+You can find the download at [kanboard.org](https://kanboard.org/)
 
-#### 使用说明
+## Installation
 
-1. xxxx
-2. xxxx
-3. xxxx
+You have the choice between 3 methods:
 
-#### 参与贡献
+1. Download the zip file and decompress everything under the directory `plugins/Spectre` of your Kanboard installation
+2. Clone this repository into the folder `plugins/Spectre` of your Kanboard installation
+3. Copy the content of the file `skin.min.css`, paste to the Kanboard `Settings > Application settings Custom Stylesheet`;
 
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+Note: Plugin folder is case-sensitive.  
+**Important: remove all unused themes**
 
+## Author
 
-#### 码云特技
+👤 **Viggo**
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+-   Github: [@kuerme](https://github.com/kuerme)
+
+## Show your support
+
+:star: If you like it, do not forget to give a star on GitHub!  
+:construction_worker: Any contribution will be highly appreciated
+
+Clone the repository:
+
+```console
+git clone https://github.com/kuerme/kanboard-theme-spectre.git
+```
+
+## Reporting Issues
+
+Please [create an issue](https://github.com/kuerme/kanboard-theme-spectre/issues) for any bugs you've found.
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
