@@ -1,9 +1,8 @@
-<h1 align="center">Welcome to Kanboard Theme Spectre 👋</h1>
-<p align="center">
-  [![Latest release](https://img.shields.io/github/release/kuerme/kanboard-theme-spectre.svg)](https://github.com/kuerme/kanboard-theme-spectre/releases)
-  [![GitHub license](https://img.shields.io/github/license/kuerme/kanboard-theme-spectre.svg)](https://github.com/kuerme/kanboard-theme-spectre/blob/master/LICENSE)
-  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kuerme/kanboard-theme-spectre/graphs/contributors)
-</p>
+# Welcome to Kanboard Theme Spectre 👋
+
+[![Latest release](https://img.shields.io/github/release/kuerme/kanboard-theme-spectre.svg)](https://github.com/kuerme/kanboard-theme-spectre/releases)
+[![GitHub license](https://img.shields.io/github/license/kuerme/kanboard-theme-spectre.svg)](https://github.com/kuerme/kanboard-theme-spectre/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kuerme/kanboard-theme-spectre/graphs/contributors)
 
 > This is a modern CSS theme for Kanboard and it's created based on [SPECTRE.CSS](https://picturepan2.github.io/spectre/)
 
