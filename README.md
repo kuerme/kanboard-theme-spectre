@@ -38,6 +38,8 @@ Note: Plugin folder is case-sensitive.
 👤 **Viggo**
 
 -   Github: [@kuerme](https://github.com/kuerme)
+-   Gitee: [@viggo](https://gitee.com/viggo)
+-   Blog: [https://viggo.coding.me/blog](https://viggo.coding.me/blog)
 
 ## Show your support
 
