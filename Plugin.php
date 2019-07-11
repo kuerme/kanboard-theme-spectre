@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of UMSCM.
+ * A modern CSS theme for Kanboard.
  * ============================================================================
  * Copyright © Stack Strategy Inc. All Rights Reserved.
  * Website: https://viggo.coding.me/blog/
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  * ============================================================================
  * Author: Viggo <leanclose@gmail.com>
- * Date: 2019-07-10
+ * Date: 2019-07-11
  */
 namespace Kanboard\Plugin\Spectre;
 
@@ -39,7 +39,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.0';
+        return '1.0.1';
     }
 
     public function getCompatibleVersion()
