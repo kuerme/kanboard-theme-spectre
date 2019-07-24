@@ -52,7 +52,7 @@ function updateVersion() {
 //  dev task
 exports.dev = gulp.series(
     function(cb) {
-        del.sync(['../../dist/wwwroot/kanban.me/plugins/Spectre']);
+        del.sync(['../../dist/wwwroot/kanban.me/plugins/Spectre'], {force: true});
         cb();
     },
     gulp.parallel(css, minCss, updateVersion),
