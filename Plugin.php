@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  * ============================================================================
  * Author: Viggo <leanclose@gmail.com>
- * Date: 2019-07-11
+ * Date: 2019-07-24
  */
 namespace Kanboard\Plugin\Spectre;
 
@@ -39,7 +39,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.2';
+        return '1.0.3';
     }
 
     public function getCompatibleVersion()

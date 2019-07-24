@@ -1,0 +1,32 @@
+{
+    "name": "spectre",
+    "version": "1.0.3",
+    "description": "A modern CSS theme for Kanboard",
+    "main": "index.js",
+    "repository": "https://github.com/kuerme/kanboard-theme-spectre.git",
+    "author": "viggo <leanclose@gmail.com>",
+    "license": "CC-BY-4.0",
+    "scripts": {
+        "build": "gulp build"
+    },
+    "browserslist": [
+        "> 0.5%",
+        "last 4 versions",
+        "Firefox ESR",
+        "Edge >= 12",
+        "Explorer >= 10"
+    ],
+    "devDependencies": {
+        "autoprefixer": "^9.6.1",
+        "copy": "^0.3.2",
+        "cssnano": "^4.1.10",
+        "del": "^5.0.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-cssnano": "^2.1.3",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5"
+    }
+}

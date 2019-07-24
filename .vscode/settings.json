@@ -1,0 +1,4 @@
+{
+    // ["> 0.5%", "last 4 versions", "Firefox ESR", "Edge >= 12", "Explorer >= 10"],
+    "eslint.enable": false
+}

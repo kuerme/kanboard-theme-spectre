@@ -1,5 +1,14 @@
+### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+### Node ###
+node_modules/
+*.log
+yarn.lock
+
+### Project ###
+dist/
