@@ -6,13 +6,21 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 const del = require('del');
 const copy = require('copy');
+const zip = require('gulp-zip');
+const fs = require('fs-extra');
+const replace = require('gulp-replace');
 
-function clean(cb) {
-    del.sync(['./dist']);
-    cb();
-}
+// vars
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+};
+var config = JSON.parse(fs.readFileSync('./package.json'));
+var version = config.version;
+var name = config.name.capitalize();
+var folder = name + '-' + version;
 
-function css(cb) {
+// generate css
+function css() {
     return gulp
         .src(['./*.scss', '!./_*.scss'])
         .pipe(sourcemaps.init())
@@ -22,6 +30,7 @@ function css(cb) {
         .pipe(gulp.dest('./dist'));
 }
 
+// generate comporessed css
 function minCss() {
     return gulp
         .src(['./*.scss', '!./_*.scss'])
@@ -32,8 +41,53 @@ function minCss() {
         .pipe(gulp.dest('./dist'));
 }
 
-function copyfiles(cb) {
-    copy(['./Plugin.php'], './dist', cb);
+// update plugin version
+function updateVersion() {
+    return gulp
+        .src('./Plugin.php')
+        .pipe(replace("/return '.*?'/g", "return '" + version + "'"))
+        .pipe(gulp.dest('./'));
 }
 
-exports.build = gulp.series(clean, gulp.parallel(css, minCss), copyfiles);
+//  dev task
+exports.dev = gulp.series(
+    function(cb) {
+        del.sync(['../../dist/wwwroot/kanban.me/plugins/Spectre']);
+        cb();
+    },
+    gulp.parallel(css, minCss, updateVersion),
+    function(cb) {
+        copy(['./Plugin.php'], '../../dist/wwwroot/kanban.me/plugins/Spectre', cb);
+    }
+);
+
+// build task
+exports.build = gulp.series(
+    function(cb) {
+        del.sync(['./dist']);
+        cb();
+    },
+    gulp.parallel(css, minCss, updateVersion),
+    function(cb) {
+        copy(['./Plugin.php'], './dist', cb);
+    }
+);
+
+// publish task
+exports.publish = gulp.series(
+    function(cb) {
+        // fs.ensureDirSync(spectreFolderPath);
+        del.sync('./dist/*.zip');
+        fs.copy('./dist', './publish/' + folder, {overwrite: true}, cb);
+    },
+    function() {
+        return gulp
+            .src(['./publish/**'])
+            .pipe(zip(folder + '.zip'))
+            .pipe(gulp.dest('./dist'));
+    },
+    function(cb) {
+        del.sync('./publish');
+        cb();
+    }
+);
