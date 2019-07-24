@@ -15,9 +15,8 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 };
 var config = JSON.parse(fs.readFileSync('./package.json'));
-var version = config.version;
-var name = config.name.capitalize();
-var folder = name + '-' + version;
+var projectVersion = config.version;
+var projectName = config.name.capitalize();
 
 // generate css
 function css() {
@@ -45,19 +44,19 @@ function minCss() {
 function updateVersion() {
     return gulp
         .src('./Plugin.php')
-        .pipe(replace("/return '.*?'/g", "return '" + version + "'"))
+        .pipe(replace("/return '.*?'/g", "return '" + projectVersion + "'"))
         .pipe(gulp.dest('./'));
 }
 
 //  dev task
 exports.dev = gulp.series(
     function(cb) {
-        del.sync(['../../dist/wwwroot/kanban.me/plugins/Spectre'], {force: true});
+        del.sync(['../../dist/wwwroot/kanban.me/plugins/' + projectName], {force: true});
         cb();
     },
     gulp.parallel(css, minCss, updateVersion),
     function(cb) {
-        copy(['./Plugin.php'], '../../dist/wwwroot/kanban.me/plugins/Spectre', cb);
+        copy(['./Plugin.php'], '../../dist/wwwroot/kanban.me/plugins/' + projectName, cb);
     }
 );
 
@@ -78,12 +77,12 @@ exports.publish = gulp.series(
     function(cb) {
         // fs.ensureDirSync(spectreFolderPath);
         del.sync('./dist/*.zip');
-        fs.copy('./dist', './publish/' + folder, {overwrite: true}, cb);
+        fs.copy('./dist', './publish/' + projectName, {overwrite: true}, cb);
     },
     function() {
         return gulp
             .src(['./publish/**'])
-            .pipe(zip(folder + '.zip'))
+            .pipe(zip(projectName + '-' + projectVersion + '.zip'))
             .pipe(gulp.dest('./dist'));
     },
     function(cb) {
